@@ -14,5 +14,8 @@
     "install": "cd client && yarn"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-router-dom": "6"
+  }
 }
