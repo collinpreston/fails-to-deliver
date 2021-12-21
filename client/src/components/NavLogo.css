@@ -1,0 +1,14 @@
+html,
+#navbar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.photo {
+  width: 64px;
+  height: 64px;
+}
+
+.brand-logo {
+  display: inline-flex !important;
+}
