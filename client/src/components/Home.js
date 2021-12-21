@@ -3,7 +3,6 @@ import './Home.css';
 import SearchBar from './SearchBar';
 import CompanyGraph from './CompanyGraph';
 import moment from 'moment';
-import NavLogo from './NavLogo';
 
 const Home = () => {
   const [companySymbol, setCompanySymbol] = useState("");
@@ -47,7 +46,6 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <NavLogo customClickEvent={resetHomePage}></NavLogo>
       <div className="Title" onClick={resetHomePage}>Fails-to-Deliver Data</div>
       <div className="SearchBar">
         <SearchBar onSelectCompany={handleSearchSelection} style={{width: '50%'}}/>
