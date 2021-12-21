@@ -11,11 +11,15 @@ module Authenticable
     end
 
     def verify_api_token!
-        raise Exceptions::AccessDenied unless ApiKey.exists?(key: request.headers['key'])
+        raise Exceptions::AccessDenied unless ApiKey.exists?(key: request.headers['key']) || request_local?
     end
 
 
     private
+
+    def request_local?
+        '127.0.0.1' == request.remote_ip
+    end
 
     def forbidden_response
         render json: { errors: [
