@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home'
 import NavLogo from './components/NavLogo';
+import About from './components/About';
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const App = () => {
