@@ -13,14 +13,6 @@ body {
   flex: 1 0 auto;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
 .SearchBar {
   height: 50%;
   width: 50%;

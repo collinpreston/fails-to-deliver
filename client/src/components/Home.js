@@ -48,7 +48,7 @@ const Home = () => {
     <div className="Home">
       <div className="Title" onClick={resetHomePage}>Fails-to-Deliver Data</div>
       <div className="SearchBar">
-        <SearchBar onSelectCompany={handleSearchSelection} style={{width: '50%'}}/>
+        <SearchBar onSelectCompany={handleSearchSelection} onClearSearch={resetHomePage} style={{width: '50%'}}/>
       </div>
       <br/>
       {graph}

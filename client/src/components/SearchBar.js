@@ -17,6 +17,10 @@ class SearchBar extends React.Component {
     handleOnSelect = (item) =>{
       this.props.onSelectCompany(item)
     };
+
+    handleOnClear = () =>{
+      this.props.onClearSearch()
+    }
   
   
     fetchData(){
@@ -37,6 +41,7 @@ class SearchBar extends React.Component {
             fuseOptions={{ keys: ["symbol", "name"] }} // Search on both fields
             autoFocus
             onSelect={this.handleOnSelect}
+            onClear={this.handleOnClear}
             resultStringKeyName="symbol" // String to display in the results
             placeholder={'Search by symbol or name'}
             styling={{ zIndex: 2 }} // To display it on top of the search box below
