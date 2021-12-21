@@ -6,15 +6,15 @@ development:
   username: fails2deliver
   password: password
 
-  # development:
-  # adapter: postgresql
-  # host: app-c389cd42-254a-4c24-8831-4af945a9bdee-do-user-10452926-0.b.db.ondigitalocean.com
-  # port: 25060
-  # encoding: unicode
-  # database: db
-  # pool: 5
-  # username: db
-  # password: out9li5VeybLK3WJ
+# development:
+#   adapter: postgresql
+#   host: app-c389cd42-254a-4c24-8831-4af945a9bdee-do-user-10452926-0.b.db.ondigitalocean.com
+#   port: 25060
+#   encoding: unicode
+#   database: db
+#   pool: 5
+#   username: db
+#   password: out9li5VeybLK3WJ
 
 test:
   adapter: postgresql
