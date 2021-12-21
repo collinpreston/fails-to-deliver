@@ -2,9 +2,9 @@ import React from "react";
 import Logo from "./logo.svg";
 import "./NavLogo.css"
 
-const NavLogo = () => {
+const NavLogo = (props) => {
     return (
-      <nav id="navbar">
+      <nav id="navbar" onClick={props.customClickEvent}>
         <div className="nav-wrapper">
           <a
             to={"/"}

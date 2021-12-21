@@ -4,14 +4,14 @@ import SearchBar from './components/SearchBar';
 import CompanyGraph from './components/CompanyGraph';
 import moment from 'moment';
 import NavLogo from './components/NavLogo';
-import MadeWithLove from 'react-made-with-love';
 
 const App = () => {
   const [companySymbol, setCompanySymbol] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [graphShown, setGraphShown] = useState(false);
-  const [companyLastUpdatedOn, setCompanyLastUpdatedOn] = useState("")
+  const [companyLastUpdatedOn, setCompanyLastUpdatedOn] = useState("");
+  const [searchString, setSearchString] = useState("");
 
   function fetchSettlementsForCompany(companyId) {
     const url = `/api/v1/company/${companyId}`;
@@ -36,6 +36,11 @@ const App = () => {
     fetchSettlementsForCompany(item.id)
   }
 
+  function resetHomePage() {
+    setGraphShown(false);
+    setSearchString("")
+  }
+
   let graph, dataRetrievedDate;
   if (graphShown) {
     graph = <CompanyGraph selectedCompanyName={companyName} selectedCompanySymbol={companySymbol} selectedCompanyData={companyData}></CompanyGraph>
@@ -44,8 +49,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavLogo/>
-      <div className="Title">Fails-to-Deliver Data</div>
+      <NavLogo customClickEvent={resetHomePage}></NavLogo>
+      <div className="Title" onClick={resetHomePage}>Fails-to-Deliver Data</div>
       <div className="SearchBar">
         <SearchBar onSelectCompany={handleSearchSelection} style={{width: '50%'}}/>
       </div>
@@ -53,10 +58,7 @@ const App = () => {
       {graph}
       {dataRetrievedDate}
       <footer>
-        <MadeWithLove
-          by="Collin"
-          emoji
-        />
+        Made in Rochester, NY
       </footer>
     </div>
   );

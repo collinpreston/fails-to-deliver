@@ -36,6 +36,7 @@ footer {
   justify-content: center;
   padding-bottom: 25px;
   color: #1f4966;
+  cursor: pointer;
 }
 
 .App-header {
