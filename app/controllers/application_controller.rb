@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
     def frontend_index_html
         render file: 'public/index.html'
     end

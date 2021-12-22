@@ -1,24 +1,11 @@
 {
   "name": "fails-to-deliver",
-  "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && yarn start",
-    "build": "cd client && yarn build",
-    "install": "cd client && yarn"
-  },
-  "author": "",
-  "license": "ISC",
+  "private": true,
   "dependencies": {
-    "bootstrap": "5.1.3",
-    "react-bootstrap": "^2.0.4",
-    "react-json-pretty": "^2.2.0",
-    "react-router-dom": "^6.2.1"
-  }
+    "@rails/ujs": "^6.0.0",
+    "turbolinks": "^5.2.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/actioncable": "^6.0.0"
+  },
+  "version": "0.1.0"
 }
