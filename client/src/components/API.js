@@ -1,4 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion'
+import JSONPretty from 'react-json-pretty';
 import './API.css'
 
 function API() {
@@ -89,6 +90,33 @@ function API() {
         ]
     }`;
 
+    const company_list_response = `[
+        {
+            "id": 1,
+            "symbol": "AGRI",
+            "name": "AGRIFORCE GROWING SYS LTD COM "
+        },
+        {
+            "id": 2,
+            "symbol": "VMAR",
+            "name": "VISION MARINE TECHNOLOGIES INC"
+        },
+        {
+            "id": 3,
+            "symbol": "DDAIF",
+            "name": "DAIMLER AG"
+        },
+        {
+            "id": 4,
+            "symbol": "DB",
+            "name": "DEUTSCHE BANK AG NAMEN AKT (DE"
+        },
+        {
+            "id": 5,
+            "symbol": "CSTM",
+            "name": "CONSTELLIUM SE CL A SHS USD (F"
+        }]`
+
     return (
         <div id="api-title">
             <h1>API</h1>
@@ -100,14 +128,15 @@ function API() {
                         <p><b>Description:</b> Returns all of the failed delivery data for a single company.</p>
                         <p><b>Parameters:</b> id - The Id of the company being searched.</p>
                         <p><b>Returns:</b> </p>
+                        <JSONPretty id="json-pretty" json={company_search_response}></JSONPretty>
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>/api/v1/company</Accordion.Header>
                     <Accordion.Body>
-                        <p><b>Description:</b> Returns all of the failed delivery data for a single company.</p>
-                        <p><b>Parameters:</b> id - The Id of the company being searched.</p>
+                        <p><b>Description:</b> Returns all of the companies available</p>
                         <p><b>Returns:</b> </p>
+                        <JSONPretty id="json-pretty" json={company_list_response}></JSONPretty>
                     </Accordion.Body>
                 </Accordion.Item>
                 </Accordion>

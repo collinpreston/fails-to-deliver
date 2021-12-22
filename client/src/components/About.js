@@ -4,7 +4,7 @@ function About() {
     return (
       <>
         <div>
-            <div id="title">
+            <div id="FAQ-title">
                 <h1>Frequenty Asked Questions</h1>
                 <p>Feel free to contact us below for any questions not answered here.</p>
             </div>
@@ -35,7 +35,7 @@ function About() {
                 <Accordion.Item eventKey="3">
                     <Accordion.Header>Why is there not more historical data?</Accordion.Header>
                     <Accordion.Body>
-                        Cost.  We only make money through donations.  Each report from the SEC can contain
+                        Cost.  We only make money through donations (<a href="https://www.paypal.com/donate/?hosted_button_id=UFQ23NBQ7YDJU">PayPal</a>).  Each report from the SEC can contain
                         40k entries, which must be consumed and stored into our database.  Hosting and managing our
                         current infrastructure costs $12 a month.  Adding more historically data will double or tripple
                         that cost.
