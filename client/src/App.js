@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import Home from './components/Home'
 import NavLogo from './components/NavLogo';
@@ -6,6 +5,7 @@ import About from './components/About';
 import Footer from './components/Footer'
 import Contact from './components/Contact'
 import API from './components/API'
+import NotFound from './components/NotFound'
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const App = () => {
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="api" element={<API />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
