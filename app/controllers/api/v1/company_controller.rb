@@ -1,5 +1,6 @@
 class Api::V1::CompanyController < ApplicationController
   require 'json'
+  include Authenticable
 
   def index
     companies_arr = ::Company.pluck(:id, :symbol, :description)
