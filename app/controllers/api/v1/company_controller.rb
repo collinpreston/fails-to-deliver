@@ -1,4 +1,4 @@
-class Api::V1::CompanyController < ApplicationController
+class Api::V1::CompanyController < ApiController
   require 'json'
 
   def index
