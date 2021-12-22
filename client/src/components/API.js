@@ -1,8 +1,21 @@
 import Accordion from 'react-bootstrap/Accordion'
 import JSONPretty from 'react-json-pretty';
+import DocumentMeta from 'react-document-meta';
 import './API.css'
 
 function API() {
+    const meta = {
+        title: 'API',
+        description: 'Stock Fails to deliver data API.',
+        canonical: 'http://failsdata.com/api',
+        meta: {
+            charset: 'utf-8',
+            name: {
+                keywords: 'API,fails,stocks,deliver,data'
+            }
+        }
+    };
+
     const company_search_response = `{
         "id": 1,
         "data_last_updated": "2021-12-20 17:37:47 -0500",
@@ -118,29 +131,31 @@ function API() {
         }]`
 
     return (
-        <div id="api-title">
-            <h1>API</h1>
-            <br/>
-            <Accordion id="api-endpoints">
-                <Accordion.Item eventKey="0">
-                    <Accordion.Header>/api/v1/company/:id</Accordion.Header>
-                    <Accordion.Body>
-                        <p><b>Description:</b> Returns all of the failed delivery data for a single company.</p>
-                        <p><b>Parameters:</b> id - The Id of the company being searched.</p>
-                        <p><b>Returns:</b> </p>
-                        <JSONPretty id="json-pretty" json={company_search_response}></JSONPretty>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                    <Accordion.Header>/api/v1/company</Accordion.Header>
-                    <Accordion.Body>
-                        <p><b>Description:</b> Returns all of the companies available</p>
-                        <p><b>Returns:</b> </p>
-                        <JSONPretty id="json-pretty" json={company_list_response}></JSONPretty>
-                    </Accordion.Body>
-                </Accordion.Item>
+        <DocumentMeta {...meta}>
+            <div id="api-title">
+                <h1>API</h1>
+                <br />
+                <Accordion id="api-endpoints">
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header>/api/v1/company/:id</Accordion.Header>
+                        <Accordion.Body>
+                            <p><b>Description:</b> Returns all of the failed delivery data for a single company.</p>
+                            <p><b>Parameters:</b> id - The Id of the company being searched.</p>
+                            <p><b>Returns:</b> </p>
+                            <JSONPretty id="json-pretty" json={company_search_response}></JSONPretty>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                        <Accordion.Header>/api/v1/company</Accordion.Header>
+                        <Accordion.Body>
+                            <p><b>Description:</b> Returns all of the companies available</p>
+                            <p><b>Returns:</b> </p>
+                            <JSONPretty id="json-pretty" json={company_list_response}></JSONPretty>
+                        </Accordion.Body>
+                    </Accordion.Item>
                 </Accordion>
-        </div>
+            </div>
+        </DocumentMeta>
     )
 }
 export default API

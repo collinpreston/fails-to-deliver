@@ -9,6 +9,7 @@ import API from './components/API'
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const App = () => {
+
   const navigate = useNavigate();
 
   function navigateHome() {
@@ -25,7 +26,7 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="api" element={<API />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
