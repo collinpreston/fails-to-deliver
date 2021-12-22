@@ -90,10 +90,10 @@ function API() {
     }`;
 
     return (
-        <div id="title">
+        <div id="api-title">
             <h1>API</h1>
             <br/>
-            <Accordion id="accordian">
+            <Accordion id="api-endpoints">
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>/api/v1/company/:id</Accordion.Header>
                     <Accordion.Body>
