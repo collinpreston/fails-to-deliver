@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get 'company', to: 'company#index'
       get 'company/:id', to: 'company#show'
       post 'settlement-resource', to: 'settlement_resource#create' 
+      post 'inquiry', to: 'inquiry#create'
     end
   end
 
