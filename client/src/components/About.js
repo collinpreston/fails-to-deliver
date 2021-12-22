@@ -19,7 +19,7 @@ function About() {
             <DocumentMeta {...meta}>
                 <div>
                     <div id="FAQ-title">
-                        <h1>Frequenty Asked Questions</h1>
+                        <h1>Frequently Asked Questions</h1>
                         <p>Feel free to contact us below for any questions not answered here.</p>
                     </div>
                     <Accordion id="accordian">

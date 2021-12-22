@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Home: https://failsdata.com/
+About: https://failsdata.com/about
+Contact: https://failsdata.com/contact
+API: https://failsdata.com/api
 Disallow:
