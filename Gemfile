@@ -57,4 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "react_on_rails"
 
+gem "active_model_serializers", require: true
+
 gem "webpacker", "~> 5.4.3"
+gem 'mini_racer', platforms: :ruby

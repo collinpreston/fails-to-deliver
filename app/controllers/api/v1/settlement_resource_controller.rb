@@ -1,4 +1,4 @@
-class Api::V1::SettlementResourceController < ApplicationController
+class Api::V1::SettlementResourceController < ApiController
   include Authenticable
 
   def create
