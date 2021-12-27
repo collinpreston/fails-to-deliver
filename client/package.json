@@ -4,6 +4,7 @@
   "proxy": "http://127.0.0.1:3000",
   "private": true,
   "dependencies": {
+    "@ctrl/react-adsense": "^1.5.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",

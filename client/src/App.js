@@ -6,7 +6,8 @@ import Footer from './components/Footer'
 import Contact from './components/Contact'
 import API from './components/API'
 import NotFound from './components/NotFound'
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Adsense } from '@ctrl/react-adsense';
 
 const App = () => {
 
@@ -27,6 +28,10 @@ const App = () => {
         <Route path="api" element={<API />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Adsense
+        client="ca-pub-2143495609871756"
+        slot="7442874197"
+      />
       <Footer />
     </div>
   );
