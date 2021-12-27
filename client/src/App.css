@@ -27,3 +27,16 @@ body {
 .App-link {
   color: #61dafb;
 }
+
+#container {
+  overflow-y: scroll;
+  padding-bottom: 96px;
+  height: 100vh;
+}
+
+#adsense {
+  left:0;
+  right:0;
+  height: fit-content;
+  padding-top: 25px;
+}

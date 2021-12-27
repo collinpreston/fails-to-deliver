@@ -1,3 +1,4 @@
+import React, { useLayoutEffect, useState } from 'react';
 import './App.css';
 import Home from './components/Home'
 import NavLogo from './components/NavLogo';
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <div id="container">
       <NavLogo customClickEvent={navigateHome}></NavLogo>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,10 +30,15 @@ const App = () => {
         <Route path="api" element={<API />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <Adsense
-        client="ca-pub-2143495609871756"
-        slot="7442874197"
-      />
+      <div id="adsense">
+        <Adsense
+          client="ca-pub-2143495609871756"
+          slot="7442874197"
+          style={{ height: 100 }}
+          format=""
+        />
+      </div>
+      </div>
       <Footer />
     </div>
   );
