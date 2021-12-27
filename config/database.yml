@@ -23,9 +23,9 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-# development:
-#   <<: *default
-#   database: test_postgres_development
+development:
+  <<: *default
+  database: test_postgres_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,15 +61,15 @@ test:
   <<: *default
   database: fails_to_deliver_test
 
-development:
-  adapter: postgresql
-  host: app-c389cd42-254a-4c24-8831-4af945a9bdee-do-user-10452926-0.b.db.ondigitalocean.com
-  port: 25060
-  encoding: unicode
-  database: db
-  pool: 5
-  username: db
-  password: out9li5VeybLK3WJ
+# development:
+#   adapter: postgresql
+#   host: app-c389cd42-254a-4c24-8831-4af945a9bdee-do-user-10452926-0.b.db.ondigitalocean.com
+#   port: 25060
+#   encoding: unicode
+#   database: db
+#   pool: 5
+#   username: db
+#   password: out9li5VeybLK3WJ
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

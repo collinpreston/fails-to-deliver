@@ -1,0 +1,4 @@
+.navbar-expand {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
