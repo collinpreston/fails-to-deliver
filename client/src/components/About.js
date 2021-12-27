@@ -30,7 +30,9 @@ function About() {
                                     Failure to deliver (FTD) refers to a situation where one party in a trading contract
                                     (whether it's shares, futures, options, or forward contracts) doesn't deliver on their obligation.
                                     Such failures occur when a buyer (the party with a long position) doesn't have enough money to
-                                    take delivery and pay for the transaction at settlement. - <a href="https://www.investopedia.com/terms/f/failuretodeliver.asp">investopedia.com</a>
+                                    take delivery and pay for the transaction at settlement. A failure can also occur when the seller 
+                                    (the party with a short position) does not own all or any of the underlying assets required 
+                                    at settlement, and so cannot make the delivery.- <a href="https://www.investopedia.com/terms/f/failuretodeliver.asp">investopedia.com</a>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
