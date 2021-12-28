@@ -11,6 +11,7 @@ return (
       <Nav.Link href="/about">About</Nav.Link>
       <Nav.Link href="/contact">Contact</Nav.Link>
       <Nav.Link href="/api">API</Nav.Link>
+      <Nav.Link href="https://www.paypal.com/paypalme/collinhpreston">Support</Nav.Link>
     </Nav>
     </Container>
   </Navbar>

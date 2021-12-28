@@ -22,22 +22,22 @@ const App = () => {
   return (
     <div className="App">
       <div id="container">
-      <NavLogo customClickEvent={navigateHome}></NavLogo>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="api" element={<API />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-      <div id="adsense">
-        <Adsense
-          client="ca-pub-2143495609871756"
-          slot="7442874197"
-          style={{ height: 100 }}
-          format=""
-        />
-      </div>
+        <NavLogo customClickEvent={navigateHome}></NavLogo>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="api" element={<API />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <div id="adsense">
+          <Adsense
+            client="ca-pub-2143495609871756"
+            slot="7442874197"
+            style={{ height: 100 }}
+            format=""
+          />
+        </div>
       </div>
       <Footer />
     </div>
