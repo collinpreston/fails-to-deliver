@@ -7,30 +7,49 @@ import DocumentMeta from 'react-document-meta';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
-const Home = (props) => {
+const Home = () => {
 
   const navigate = useNavigate();
-
-  const meta = {
-    title: 'Fails to deliver data - Home',
-    description: 'failsdata.com home page',
-    canonical: 'http://failsdata.com/',
-    meta: {
-      charset: 'utf-8',
-      name: {
-        keywords: 'stock,SEC,fails,FTD,GME'
-      }
-    }
-  };
-
-  let { slug } = useParams();
-
 
   const [companySymbol, setCompanySymbol] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [graphShown, setGraphShown] = useState(false);
   const [companyLastUpdatedOn, setCompanyLastUpdatedOn] = useState("");
+
+  let metadataTitle = 'Fails to deliver data - Home'
+  let metadataDescription = 'failsdata.com provides FTD data on thousands of stocks direct from the SEC.'
+  let metadataKeywords = 'stock,SEC,fails,FTD,GME'
+
+  if (companySymbol !== undefined) {
+    metadataTitle = `${companySymbol} fails-to-deliver data`
+    metadataKeywords = `${companySymbol},stock,SEC,fails,FTD,GME`
+  }
+
+  if (companySymbol !== undefined && companyName !== undefined) {
+    metadataDescription = `${companySymbol} - ${companyName} data from failsdata.com`
+  }
+
+  let meta = {
+    title: metadataTitle,
+    description: metadataDescription,
+    canonical: 'http://failsdata.com/',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: metadataKeywords
+      }
+    }
+  };
+
+  let { slug } = useParams();
+
+  function resetHomePage() {
+    setGraphShown(false);
+    setCompanyName("")
+    setCompanySymbol("");
+    navigate('/');
+  }
 
   useEffect(() => {
     if (slug !== undefined) {
@@ -65,14 +84,11 @@ const Home = (props) => {
   }
 
   function handleSearchSelection(item) {
+    navigate(`/${item.symbol}`)
     setCompanySymbol(item.symbol);
     setCompanyName(item.name);
     setGraphShown(true);
     fetchSettlementsForCompany(item.id)
-  }
-
-  function resetHomePage() {
-    setGraphShown(false);
   }
 
   let graph, dataRetrievedDate;
