@@ -36,7 +36,7 @@ function TopTenCompany() {
                 <h5>Top 10 FTD by volume</h5>
             </div>
             <div id="top-ten-list">
-                <div>Symbol - Quantity</div>
+                <div><b>Symbol - Quantity</b></div>
                 <ListGroup as="ol" numbered>
                     {listItemsFromArray()}
                 </ListGroup>
