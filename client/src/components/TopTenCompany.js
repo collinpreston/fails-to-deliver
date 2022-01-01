@@ -10,6 +10,7 @@ function TopTenCompany() {
         fetch(url)
             .then(async (res) => {
                 const a = await res.json()
+                console.log(a)
                 setTopTen(a)
             })
             .catch(function (error) {
