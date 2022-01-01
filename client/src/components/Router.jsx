@@ -7,7 +7,6 @@ export default (
         <Route path='/about' />
         <Route path='/contact' />
         <Route path='/api' />
-        <Route path='/404' />
 
 
         <Route path='/AGRI' />

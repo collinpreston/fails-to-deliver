@@ -17,4 +17,10 @@ class Api::V1::CompanyController < ApiController
     render json: CompanySerializer.new(company).serializable_hash, status: :ok
   end
 
+  def show_top_ten_by_volume
+    companies_arr = Company.joins(:settlements).group('companies.id').select('SUM(settlements.quantity) as quantity', 'companies.symbol as symbol', 'companies.id as id').order('quantity desc').first(10)
+    companies_hash = companies_arr.map { |company| { id: company.id, symbol: company.symbol, quantity: company.quantity }}
+    render json: companies_hash.to_json, status: :ok
+  end
+
 end
