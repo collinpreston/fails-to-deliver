@@ -16,7 +16,7 @@ function API() {
         }
     };
 
-    const company_search_response = `{
+    const companySearchResponse = `{
         "id": 1,
         "data_last_updated": "2021-12-20 17:37:47 -0500",
         "settlements": [
@@ -103,7 +103,7 @@ function API() {
         ]
     }`;
 
-    const company_list_response = `[
+    const companyListResponse = `[
         {
             "id": 1,
             "symbol": "AGRI",
@@ -130,6 +130,60 @@ function API() {
             "name": "CONSTELLIUM SE CL A SHS USD (F"
         }]`
 
+    const topTenResponse =
+        `[
+                {
+                    "id": 5252,
+                    "symbol": "TWOH",
+                    "quantity": 52727790
+                },
+                {
+                    "id": 407,
+                    "symbol": "KNEOF",
+                    "quantity": 45163750
+                },
+                {
+                    "id": 5000,
+                    "symbol": "SNDL",
+                    "quantity": 24628135
+                },
+                {
+                    "id": 3515,
+                    "symbol": "LGBS",
+                    "quantity": 23180885
+                },
+                {
+                    "id": 946,
+                    "symbol": "BKKT",
+                    "quantity": 16575943
+                },
+                {
+                    "id": 4601,
+                    "symbol": "HOOD",
+                    "quantity": 16313967
+                },
+                {
+                    "id": 1795,
+                    "symbol": "GWH",
+                    "quantity": 12924879
+                },
+                {
+                    "id": 4352,
+                    "symbol": "PROG",
+                    "quantity": 11400931
+                },
+                {
+                    "id": 5167,
+                    "symbol": "TMBR",
+                    "quantity": 11213448
+                },
+                {
+                    "id": 2144,
+                    "symbol": "FTSSF",
+                    "quantity": 11197532
+                }
+            ]`
+
     return (
         <DocumentMeta {...meta}>
             <div id="api-title">
@@ -140,9 +194,9 @@ function API() {
                         <Accordion.Header>/api/v1/company/:id</Accordion.Header>
                         <Accordion.Body>
                             <p><b>Description:</b> Returns all of the failed delivery data for a single company.</p>
-                            <p><b>Parameters:</b> id - The Id of the company being searched.</p>
+                            <p><b>Parameters:</b> id - The Id or Symbol of the company being searched.</p>
                             <p><b>Returns:</b> </p>
-                            <JSONPretty id="json-pretty" json={company_search_response}></JSONPretty>
+                            <JSONPretty id="json-pretty" json={companySearchResponse}></JSONPretty>
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
@@ -150,7 +204,15 @@ function API() {
                         <Accordion.Body>
                             <p><b>Description:</b> Returns all of the companies available</p>
                             <p><b>Returns:</b> </p>
-                            <JSONPretty id="json-pretty" json={company_list_response}></JSONPretty>
+                            <JSONPretty id="json-pretty" json={companyListResponse}></JSONPretty>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="2">
+                        <Accordion.Header>/api/v1/company/top-ten</Accordion.Header>
+                        <Accordion.Body>
+                            <p><b>Description:</b> Returns the top 10 FTD companies by quantity</p>
+                            <p><b>Returns:</b> </p>
+                            <JSONPretty id="json-pretty" json={topTenResponse}></JSONPretty>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
