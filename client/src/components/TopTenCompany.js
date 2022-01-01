@@ -1,19 +1,7 @@
 import ListGroup from 'react-bootstrap/ListGroup'
-import DocumentMeta from 'react-document-meta';
 import React, { useState, useEffect } from 'react';
 import './TopTenCompany.css'
 function TopTenCompany() {
-    const meta = {
-        title: 'Fails to deliver data - About',
-        description: 'About failsdata.com and stock FTD frequently asked questions',
-        canonical: 'http://failsdata.com/about',
-        meta: {
-            charset: 'utf-8',
-            name: {
-                keywords: 'about,fails,stocks,SEC,deliver'
-            }
-        }
-    };
 
     const [topTen, setTopTen] = useState([]);
 
@@ -42,21 +30,17 @@ function TopTenCompany() {
     }
 
     return (
-        <>
-            <DocumentMeta {...meta}>
-                <div>
-                    <div id="top-ten-title">
-                        <h5>Top 10 FTD by volume</h5>
-                    </div>
-                    <div id="top-ten-list">
-                        <div>Symbol - Quantity</div>
-                        <ListGroup as="ol" numbered>
-                            {listItemsFromArray()}
-                        </ListGroup>
-                    </div>
-                </div>
-            </DocumentMeta>
-        </>
+        <div>
+            <div id="top-ten-title">
+                <h5>Top 10 FTD by volume</h5>
+            </div>
+            <div id="top-ten-list">
+                <div>Symbol - Quantity</div>
+                <ListGroup as="ol" numbered>
+                    {listItemsFromArray()}
+                </ListGroup>
+            </div>
+        </div>
     );
 }
 export default TopTenCompany;
