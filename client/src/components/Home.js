@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import SearchBar from './SearchBar';
 import CompanyGraph from './CompanyGraph';
 import moment from 'moment';
 import DocumentMeta from 'react-document-meta';
+import { useParams } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
 
   const meta = {
     title: 'Fails to deliver data - Home',
@@ -19,12 +20,20 @@ const Home = () => {
     }
   };
 
+  let { slug } = useParams();
+
 
   const [companySymbol, setCompanySymbol] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [graphShown, setGraphShown] = useState(false);
   const [companyLastUpdatedOn, setCompanyLastUpdatedOn] = useState("");
+
+  useEffect(() => {
+    if (slug !== undefined) {
+      handleExplicitUrlSymbolDefined();
+    }
+  }, []);
 
   function fetchSettlementsForCompany(companyId) {
     const url = `/api/v1/company/${companyId}`;
@@ -42,7 +51,10 @@ const Home = () => {
   }
 
   function handleExplicitUrlSymbolDefined() {
-    setCompanySymbol(props.match.params.id);
+    fetchSettlementsForCompany(slug)
+    setGraphShown(true);
+    fetchSettlementsForCompany(slug)
+    setCompanySymbol(slug);
   }
 
   function handleSearchSelection(item) {
