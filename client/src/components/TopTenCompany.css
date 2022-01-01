@@ -1,0 +1,14 @@
+#top-ten-title {
+    font-family: Roboto,Arial,sans-serif;
+    padding-top: 50px;
+    color: #1f4966;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#top-ten-list {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

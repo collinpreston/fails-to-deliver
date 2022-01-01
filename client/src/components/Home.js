@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import SearchBar from './SearchBar';
 import CompanyGraph from './CompanyGraph';
+import TopTenCompany from './TopTenCompany';
 import moment from 'moment';
 import DocumentMeta from 'react-document-meta';
 import { useParams } from "react-router-dom";
@@ -90,7 +91,7 @@ const Home = () => {
     navigate('/');
   }
 
-  let graph, dataRetrievedDate;
+  let graph, dataRetrievedDate, topTenTable;
   if (graphShown) {
     graph = <CompanyGraph selectedCompanyName={companyName} selectedCompanySymbol={companySymbol} selectedCompanyData={companyData}></CompanyGraph>
     dataRetrievedDate = <p>{"Data last updated on " + moment(companyLastUpdatedOn).format('MMM DD, YYYY')}</p>
@@ -99,11 +100,12 @@ const Home = () => {
   return (
     <DocumentMeta {...meta}>
       <div className="Home">
-        <div className="Title" onClick={resetHomePage}>Fails-to-Deliver Data</div>
+        <h1 className="Title" onClick={resetHomePage}>Fails-to-Deliver Data</h1>
         <div className="SearchBar">
           <SearchBar onSelectCompany={handleSearchSelection} onClearSearch={resetHomePage} style={{ width: '50%' }} />
         </div>
         <br />
+        {graphShown || <TopTenCompany/>}
         {graph}
         {dataRetrievedDate}
       </div>
