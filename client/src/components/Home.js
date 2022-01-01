@@ -43,14 +43,6 @@ const Home = () => {
   };
 
   let { slug } = useParams();
-
-  function resetHomePage() {
-    setGraphShown(false);
-    setCompanyName("")
-    setCompanySymbol("");
-    navigate('/');
-  }
-
   useEffect(() => {
     if (slug !== undefined) {
       handleExplicitUrlSymbolDefined();
@@ -89,6 +81,13 @@ const Home = () => {
     setCompanyName(item.name);
     setGraphShown(true);
     fetchSettlementsForCompany(item.id)
+  }
+
+  function resetHomePage() {
+    setGraphShown(false);
+    setCompanyName("")
+    setCompanySymbol("");
+    navigate('/');
   }
 
   let graph, dataRetrievedDate;
