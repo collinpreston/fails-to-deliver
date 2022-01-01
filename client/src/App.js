@@ -29,6 +29,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="api" element={<API />} />
           <Route path="/:slug" element={<Home />} />
+          <Route path='404' element={<NotFound />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <div id="adsense">

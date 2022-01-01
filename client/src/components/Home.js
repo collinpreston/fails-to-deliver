@@ -5,8 +5,11 @@ import CompanyGraph from './CompanyGraph';
 import moment from 'moment';
 import DocumentMeta from 'react-document-meta';
 import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Home = (props) => {
+
+  const navigate = useNavigate();
 
   const meta = {
     title: 'Fails to deliver data - Home',
@@ -44,17 +47,21 @@ const Home = (props) => {
           return { ...item, settlement_date: moment(item.settlement_date).format('MMM DD, YYYY') }
         });
         setCompanyLastUpdatedOn(a.data_last_updated)
+        setCompanyName(a.description)
+        setCompanySymbol(a.symbol)
         setCompanyData(newData)
         return a
       })
-      .catch(error => console.log(error))
+      .catch(function (error) {
+        navigate('/404');
+        console.log('Error Code   : ' + error.status);
+        console.log('Error Reason : ' + error.statusText);
+      });
   }
 
   function handleExplicitUrlSymbolDefined() {
     fetchSettlementsForCompany(slug)
     setGraphShown(true);
-    fetchSettlementsForCompany(slug)
-    setCompanySymbol(slug);
   }
 
   function handleSearchSelection(item) {
