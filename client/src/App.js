@@ -28,6 +28,7 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="api" element={<API />} />
+          <Route path="/:symbol" component={<Home />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <div id="adsense">

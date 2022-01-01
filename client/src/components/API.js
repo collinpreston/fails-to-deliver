@@ -5,7 +5,7 @@ import './API.css'
 
 function API() {
     const meta = {
-        title: 'API',
+        title: 'Fails to deliver data - API',
         description: 'Stock Fails to deliver data API.',
         canonical: 'http://failsdata.com/api',
         meta: {

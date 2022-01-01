@@ -3,7 +3,7 @@ import DocumentMeta from 'react-document-meta';
 import './About.css'
 function About() {
     const meta = {
-        title: 'About',
+        title: 'Fails to deliver data - About',
         description: 'About failsdata.com and stock FTD frequently asked questions',
         canonical: 'http://failsdata.com/about',
         meta: {

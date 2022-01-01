@@ -7,8 +7,13 @@ class Api::V1::CompanyController < ApiController
     render json: companies_hash.to_json, status: :ok
   end
 
-  def show
+  def show_by_id
     company = ::Company.find(params[:id])
+    render json: CompanySerializer.new(company).serializable_hash, status: :ok
+  end
+
+  def show_by_symbol
+    company = ::Company.find_by(symbol: params[:id].upcase)
     render json: CompanySerializer.new(company).serializable_hash, status: :ok
   end
 

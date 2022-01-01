@@ -8,7 +8,7 @@ import DocumentMeta from 'react-document-meta';
 const Home = () => {
 
   const meta = {
-    title: 'Home',
+    title: 'Fails to deliver data - Home',
     description: 'failsdata.com home page',
     canonical: 'http://failsdata.com/',
     meta: {
@@ -41,9 +41,12 @@ const Home = () => {
       .catch(error => console.log(error))
   }
 
+  function handleExplicitUrlSymbolDefined() {
+    setCompanySymbol(props.match.params.id);
+  }
+
   function handleSearchSelection(item) {
     setCompanySymbol(item.symbol);
-    console.log(item)
     setCompanyName(item.name);
     setGraphShown(true);
     fetchSettlementsForCompany(item.id)
