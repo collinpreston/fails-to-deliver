@@ -19,16 +19,16 @@ const Home = () => {
   const [companyLastUpdatedOn, setCompanyLastUpdatedOn] = useState("");
 
   let metadataTitle = 'Fails to deliver data - Home'
-  let metadataDescription = 'failsdata.com provides FTD data on thousands of stocks direct from the SEC.'
-  let metadataKeywords = 'stock,SEC,fails,FTD,GME'
+  let metadataDescription = 'failsdata.com provides FTD data on thousands of stocks direct from the Securities and Exchange Commission (SEC).'
+  let metadataKeywords = 'stock,SEC,fails,FTD,deliver,short,interest,GME'
 
   if (companySymbol !== undefined) {
-    metadataTitle = `${companySymbol} fails-to-deliver data`
-    metadataKeywords = `${companySymbol},stock,SEC,fails,FTD,GME`
+    metadataTitle = `${companySymbol} fails to deliver stock price and volume data from the Securities and Exchange Commission (SEC).`
+    metadataKeywords = `${companySymbol},stock,SEC,fails,FTD,deliver,short,interest,GME`
   }
 
   if (companySymbol !== undefined && companyName !== undefined) {
-    metadataDescription = `${companySymbol} - ${companyName} data from failsdata.com`
+    metadataDescription = `${companySymbol} - ${companyName} fails to deliver stock price and volume data from the Securities and Exchange Commission (SEC).`
   }
 
   let meta = {
