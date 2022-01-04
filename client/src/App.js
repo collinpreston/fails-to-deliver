@@ -33,12 +33,13 @@ const App = () => {
           <Route path='*' element={<NotFound />} />
         </Routes>
         <div id="adsense">
-          <Adsense
+          <a target="_blank" href="https://shareasale.com/r.cfm?b=1874396&amp;u=3072230&amp;m=115186&amp;urllink=&amp;afftrack="><img src="https://static.shareasale.com/image/115186/cubetrackernl.jpeg" border="0" /></a>
+          {/* <Adsense
             client="ca-pub-2143495609871756"
             slot="7442874197"
             style={{ height: 100 }}
             format=""
-          />
+          /> */}
         </div>
       </div>
       <Footer />

@@ -4,4 +4,5 @@ Home: https://failsdata.com/
 About: https://failsdata.com/about
 Contact: https://failsdata.com/contact
 API: https://failsdata.com/api
+Sitemap: https://example.com/my_sitemap.xml
 Disallow:
