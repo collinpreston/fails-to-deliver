@@ -5,7 +5,7 @@ function About() {
     const meta = {
         title: 'Fails to deliver data - About',
         description: 'About failsdata.com and stock FTD frequently asked questions',
-        canonical: 'http://failsdata.com/about',
+        canonical: 'https://failsdata.com/about',
         meta: {
             charset: 'utf-8',
             name: {

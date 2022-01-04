@@ -7,7 +7,7 @@ function API() {
     const meta = {
         title: 'Fails to deliver data - API',
         description: 'Stock Fails to deliver data API.',
-        canonical: 'http://failsdata.com/api',
+        canonical: 'https://failsdata.com/api',
         meta: {
             charset: 'utf-8',
             name: {

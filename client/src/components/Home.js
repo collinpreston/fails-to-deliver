@@ -34,7 +34,7 @@ const Home = () => {
   let meta = {
     title: metadataTitle,
     description: metadataDescription,
-    canonical: 'http://failsdata.com/',
+    canonical: 'https://failsdata.com/',
     meta: {
       charset: 'utf-8',
       name: {

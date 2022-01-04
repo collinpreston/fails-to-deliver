@@ -7,7 +7,7 @@ function Contact() {
     const meta = {
         title: 'Contact',
         description: 'Contact form failsdata.com',
-        canonical: 'http://failsdata.com/contact',
+        canonical: 'https://failsdata.com/contact',
         meta: {
             charset: 'utf-8',
             name: {
