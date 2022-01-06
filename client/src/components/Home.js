@@ -21,6 +21,7 @@ const Home = () => {
   let metadataTitle = 'Fails to deliver data - Home'
   let metadataDescription = 'failsdata.com provides FTD data on thousands of stocks direct from the Securities and Exchange Commission (SEC).'
   let metadataKeywords = 'stock,SEC,fails,FTD,deliver,short,interest,GME'
+  let canonical = 'https://failsdata.com/'
 
   if (companySymbol !== undefined) {
     metadataTitle = `${companySymbol} fails to deliver stock price and volume data from the Securities and Exchange Commission (SEC).`
@@ -29,6 +30,10 @@ const Home = () => {
 
   if (companySymbol !== undefined && companyName !== undefined) {
     metadataDescription = `${companySymbol} - ${companyName} fails to deliver stock price and volume data from the Securities and Exchange Commission (SEC).`
+  }
+
+  if (companySymbol !== undefined && companyName !== undefined) {
+    canonical = `'https://failsdata.com/${companySymbol}/`
   }
 
   let meta = {
