@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   if (companySymbol !== undefined && companyName !== undefined) {
-    canonical = `'https://failsdata.com/${companySymbol}/`
+    canonical = `https://failsdata.com/${companySymbol}/`
   }
 
   let meta = {
