@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 import API from './components/API'
 import NotFound from './components/NotFound'
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Adsense } from '@ctrl/react-adsense';
+import ReactGA from 'react-ga';
 
 const App = () => {
 
@@ -17,6 +17,9 @@ const App = () => {
   function navigateHome() {
     navigate('/');
   }
+
+  ReactGA.initialize('UA-187028182-4');
+  ReactGA.pageview(window.location.pathname + window.location.search);  
 
 
   return (
